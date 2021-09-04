@@ -14,6 +14,7 @@ body {
   color: #318fb5;
   padding: 1rem 2rem 0;
 }
+
 .app {
   display: flex;
   justify-content: space-evenly;
@@ -22,6 +23,7 @@ body {
   &__left {
     flex: 0.7;
     margin-right: 10px;
+
     .country-name {
       text-align: center;
       display: flex;
@@ -29,41 +31,60 @@ body {
       align-items: center;
       padding: 0.5rem;
       text-transform: uppercase;
-      color: #318fb5;
-      font-weight: bold;
-      background-color: rgb(250, 250, 250);
-      margin-bottom: 10px;
-      border-radius: 4px;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
-        rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.5rem;
+      background-color: inherit;
 
       .country-flag {
-        width: 45px;
+        width: 60px;
+        box-shadow: 0 0 0 1px #6a5d5d;
       }
     }
+
+    .app-stats-container {
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+        rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+        rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+      border-radius: 4px;
+    }
   }
+
   &__right {
     flex: 0.3;
   }
+
   &__table {
     margin-top: 20px;
     overflow: auto;
     height: 380px;
     color: #6a5d5d;
   }
+
   &__stats {
     display: flex;
     justify-content: space-evenly;
+
+    .MuiPaper-root {
+      // box-shadow: none !important;
+      border-radius: 0 !important;
+      margin-right: 0 !important;
+    }
   }
+
   &__dropdown {
     background-color: white;
   }
+
   &__graphTitle {
     margin: 20px 0;
   }
+
   &__tableTitle {
     margin-bottom: 20px;
   }
+
   &__graph {
     display: flex !important;
     flex-direction: column !important;
@@ -75,17 +96,21 @@ body {
   .header {
     padding: 1rem 0.5rem 0;
     margin-bottom: 0;
+
     h1 {
       font-size: 1.3rem;
       text-transform: uppercase;
     }
+
     .MuiOutlinedInput-input {
       padding: 10px;
     }
   }
+
   .app {
     padding: 1rem 0.5rem;
   }
+
   .country-flag {
     width: 35px;
   }
@@ -97,26 +122,32 @@ body {
 
     &__right {
       margin-top: 10px;
+
       &__content {
         display: flex;
         flex-direction: column-reverse;
       }
     }
+
     &__left {
       display: flex;
       flex-direction: column-reverse;
     }
+
     &__stats {
       margin-top: 10px;
     }
+
     &__graphTitle {
       margin-bottom: 20px;
       margin-top: 0;
     }
+
     &__tableTitle {
       margin-bottom: 20px 0;
     }
   }
+
   .app__left .country-name {
     text-transform: none;
     margin-top: 10px;
