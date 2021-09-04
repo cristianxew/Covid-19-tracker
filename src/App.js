@@ -61,6 +61,7 @@ function App() {
     const url2 = `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
     if (countryCode === "worldwide") {
+
       await fetch(url1)
         .then((res) => res.json())
         .then((data) => {
@@ -72,9 +73,9 @@ function App() {
       await fetch(url2)
         .then((res) => res.json())
         .then((data) => {
-          setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
           setCountryInfo(data);
-          setMapZoom(4);
+          setMapCenter({ lat: data.countryInfo.lat, lng: data.countryInfo.long });
+          setMapZoom(6);
         });
     }
   };
@@ -85,7 +86,7 @@ function App() {
         <h1>Covid 19 tracker</h1>
         <FormControl className="app__dropdown">
           <Select variant="outlined" value={country} onChange={onCountryChange}>
-            <MenuItem value="worldwide">WorlWide</MenuItem>
+            <MenuItem value="worldwide">WorldWide</MenuItem>
             {countries.map((country, index) => (
               <MenuItem key={index} value={country.value}>
                 {country.name}
